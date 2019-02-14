@@ -13,6 +13,8 @@ Patient::Patient(int arrivalT, int assesT, int patPriority,
 	arrivalTime=arrivalT;
 	assessmentTime=assesT;
 	sevarity=patPriority;
+	patientID=idCounter;
+	idCounter++;
 	bloodwork=false;
 	xRay=false;
 	if(diagReq.at(0)=='B'){

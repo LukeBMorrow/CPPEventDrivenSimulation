@@ -1,3 +1,5 @@
+#ifndef CONTROLLER_HPP_
+#define CONTROLLER_HPP_
 #include <string>
 #include <iostream>
 #include <fstream>
@@ -10,3 +12,4 @@ class Controller{
 	public:
 		Controller(string fileName);
 };
+#endif

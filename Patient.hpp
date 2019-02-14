@@ -1,7 +1,12 @@
+#ifndef PATIENT_HPP_
+#define PATIENT_HPP_
 #include <string>
+#include "ListItem.hpp"
 using namespace std;
 
-class Patient{
+int idCounter=0;
+
+class Patient: public ListItem {
 	public:
 		Patient(int arrivalT, int assesT, int patPriority,
 				string DiagReq,int treatT);
@@ -18,4 +23,6 @@ class Patient{
 		int arrivalTime;
 		int assessmentTime;
 		int sevarity;
+		int patientID;
 };
+#endif
