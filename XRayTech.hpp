@@ -15,7 +15,8 @@ class XRayTech:Staff{
 		XRayTech(int resourcesAvailable, int serviceTime);
 		virtual bool resourceAvailable();
 	private:
-			OrderedLinkedList* waitList;
+		OrderedLinkedList* waitList;
+		int serviceT;
 };
 
 

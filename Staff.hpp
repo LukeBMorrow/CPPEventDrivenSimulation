@@ -8,6 +8,7 @@
 #ifndef STAFF_HPP_
 #define STAFF_HPP_
 #include"Patient.hpp"
+#include <array>
 
 class Staff{
 	public:
@@ -15,7 +16,7 @@ class Staff{
 		virtual bool resourceAvailable()=0;
 		virtual ~Staff();
 	private:
-		bool availability[];
+		std::array availability;//this type of array might give some trouble
 };
 
 

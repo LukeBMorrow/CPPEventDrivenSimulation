@@ -16,6 +16,7 @@ class BloodWorkTech:Staff{
 		virtual bool resourceAvailable();
 	private:
 		OrderedLinkedList* waitList;
+		int serviceT;
 };
 
 

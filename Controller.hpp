@@ -1,10 +1,10 @@
 #ifndef CONTROLLER_HPP_
 #define CONTROLLER_HPP_
 #include <string>
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include "OrderedLinkedList.hpp"
+#include "Event.hpp"
+#include "Arrival.hpp"
+#include "FileProcessor.hpp"
 using namespace std;
 
 class Controller{

@@ -7,13 +7,19 @@
 
 #ifndef ARRIVAL_HPP_
 #define ARRIVAL_HPP_
-#include "Event.hpp"
+#include "StartEvent.hpp"
 #include "OrderedLinkedList.hpp"
 #include "Patient.hpp"
-class Arrival:Event{
-public:
-		Arrival(OrderedLinkedList* EventList,Patient* newPatient);
+#include "FileProcessor.hpp"
 
+FileProcessor* fileP;
+
+class Arrival:Event{
+	public:
+		Arrival(Patient* newPatient, int time, FileProcessor* fileProcessor);
+		Arrival(Patient* newPatient, int time);
+		virtual Event* ProcessEvent();
+		virtual ~Arrival();
 };
 
 

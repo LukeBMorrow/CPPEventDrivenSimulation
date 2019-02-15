@@ -8,10 +8,13 @@
 #ifndef STARTXRAY_HPP_
 #define STARTXRAY_HPP_
 
-#include "Event.hpp"
-
+#include "StartEvent.hpp"
+#include "XRayTech.hpp"
 class StartXRay:Event{
-public:
+	public:
+		StartXRay(Patient* newPatient,int time,XRayTech* station);
+		virtual Event* ProcessEvent();
+		virtual ~StartXRay();
 };
 
 

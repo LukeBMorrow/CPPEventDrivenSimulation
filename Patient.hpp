@@ -20,6 +20,7 @@ class Patient: public ListItem {
 		virtual bool isGreaterThan(ListItem* other);
 		void bloodWorkDone();
 		void xRaydone();
+		int getPatientID();
 	private:
 		bool bloodwork;
 		bool xRay;

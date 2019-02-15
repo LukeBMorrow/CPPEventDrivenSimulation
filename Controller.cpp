@@ -5,16 +5,19 @@ Controller::Controller(string fileName){
 }
 
 string Controller::run(string fileName){//totally works not as needed,
-	ifstream* inFile = new ifstream;
-	inFile->open(fileName);
+	FileProcessor* fileP = new FileProcessor(fileName);
 	OrderedLinkedList* eventList = new OrderedLinkedList();
 	//put first arrival from file in event list
-	do{
+	Patient * firstPatient = fileP->nextPatient();
+	eventList->addItem(new Arrival(firstPatient,firstPatient->getArrivalTime(),fileP));
+	while (!eventList->isEmpty()){
 		//remove first event
 		//process event
+		if(Event* curr = dynamic_cast<Event*>(eventList->removeTop())){//safe downcast
+			curr->processEvent();
+		}
 		//summarize data
-	}while (!eventList->isEmpty());
-
+	}
 	return "EOP";
 }
 

@@ -8,10 +8,13 @@
 #ifndef STARTBLOODWORK_HPP_
 #define STARTBLOODWORK_HPP_
 
-#include "Event.hpp"
-
+#include "StartEvent.hpp"
+#include "BloodWorkTech.hpp"
 class StartBloodWork:Event{
-public:
+	public:
+		StartBloodWork(Patient* newPatient,int time,BloodWorkTech* station);
+		virtual Event* ProcessEvent();
+		virtual ~StartBloodWork();
 };
 
 

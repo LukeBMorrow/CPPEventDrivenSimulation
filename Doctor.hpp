@@ -15,7 +15,7 @@ class Doctor:Staff{
 		Doctor(int resourcesAvailable);
 		virtual bool resourceAvailable();
 	private:
-			OrderedLinkedList* waitList;
+		OrderedLinkedList* waitList;
 };
 
 

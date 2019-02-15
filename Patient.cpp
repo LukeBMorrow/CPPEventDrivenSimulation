@@ -30,7 +30,7 @@ virtual bool Patient::isGreaterThan(ListItem* other){
 	if(typeid(other)==typeid(Patient())){//check for safe casting
 		Patient* otherPatient = dynamic_cast<Patient*>(&other);//down Cast
 		if(otherPatient->getSevarity() == sevarity){
-			result = (otherPatient->getArrivalTime()<arrivalTime);
+			result = (otherPatient->getPatientID() < patientID);
 		}else{
 			result = (otherPatient->getSevarity() < sevarity);
 		}
@@ -38,6 +38,9 @@ virtual bool Patient::isGreaterThan(ListItem* other){
 		cout<<"Error: non-compatible type comparison."<<endl;
 	}
 	return result;
+}
+int Patient::getPatientID(){
+	return patientID;
 }
 
 bool Patient::needsBloodwork(){

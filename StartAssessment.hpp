@@ -7,11 +7,14 @@
 
 #ifndef STARTASSESSMENT_HPP_
 #define STARTASSESSMENT_HPP_
-#include "Event.hpp"
+#include "StartEvent.hpp"
+#include "TriageNurse.hpp"
 
 class StartAssessment:Event{
 public:
-	StartAssessment();
+	StartAssessment(Patient* newPatient,int time,TriageNurse* station);
+	virtual Event* ProcessEvent();
+	virtual ~StartAssessment();
 };
 
 
