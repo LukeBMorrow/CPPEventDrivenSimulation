@@ -7,8 +7,16 @@
 
 #ifndef STAFF_HPP_
 #define STAFF_HPP_
+#include"Patient.hpp"
 
-
+class Staff{
+	public:
+		Staff(int numResources);
+		virtual bool resourceAvailable()=0;
+		virtual ~Staff();
+	private:
+		bool availability[];
+};
 
 
 

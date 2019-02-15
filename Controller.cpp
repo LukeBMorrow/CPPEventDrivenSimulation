@@ -7,12 +7,14 @@ Controller::Controller(string fileName){
 string Controller::run(string fileName){//totally works not as needed,
 	ifstream* inFile = new ifstream;
 	inFile->open(fileName);
+	OrderedLinkedList* eventList = new OrderedLinkedList();
+	//put first arrival from file in event list
+	do{
+		//remove first event
+		//process event
+		//summarize data
+	}while (!eventList->isEmpty());
 
-	string line;
-	string totalLine;
-	while ( getline( *inFile, line)){
-		totalLine+=line;
-	}
-	return totalLine+"\n";
+	return "EOP";
 }
 

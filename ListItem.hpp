@@ -10,7 +10,7 @@
 
 class ListItem{
 	public:
-		virtual int getPriority()=0;
+		virtual bool isGreaterThan(ListItem* item)=0;
 		virtual ~ListItem();
 };
 

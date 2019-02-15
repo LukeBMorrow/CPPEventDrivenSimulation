@@ -6,6 +6,7 @@
  */
 #include "Patient.hpp"
 
+
 Patient::Patient(int arrivalT, int assesT, int patPriority,
 				string diagReq,int treatT){
 
@@ -24,6 +25,20 @@ Patient::Patient(int arrivalT, int assesT, int patPriority,
 		xRay=true;
 	}
 }
+virtual bool Patient::isGreaterThan(ListItem* other){
+	bool result = false;
+	if(typeid(other)==typeid(Patient())){//check for safe casting
+		Patient* otherPatient = dynamic_cast<Patient*>(&other);//down Cast
+		if(otherPatient->getSevarity() == sevarity){
+			result = (otherPatient->getArrivalTime()<arrivalTime);
+		}else{
+			result = (otherPatient->getSevarity() < sevarity);
+		}
+	}else{
+		cout<<"Error: non-compatible type comparison."<<endl;
+	}
+	return result;
+}
 
 bool Patient::needsBloodwork(){
 	return bloodwork;
@@ -40,6 +55,12 @@ int Patient::getArrivalTime(){
 int Patient::getAssessmentTime(){
 	return assessmentTime;
 }
-int Patient::getSsevarity(){
+int Patient::getSevarity(){
 	return sevarity;
+}
+void Patient::bloodWorkDone(){
+	bloodwork=false;
+}
+void Patient::xRaydone(){
+	xRay=false;
 }

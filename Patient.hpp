@@ -1,6 +1,7 @@
 #ifndef PATIENT_HPP_
 #define PATIENT_HPP_
 #include <string>
+#include <iostream>
 #include "ListItem.hpp"
 using namespace std;
 
@@ -15,7 +16,10 @@ class Patient: public ListItem {
 		int getTreatmentTime();
 		int getArrivalTime();
 		int getAssessmentTime();
-		int getSsevarity();
+		int getSevarity();
+		virtual bool isGreaterThan(ListItem* other);
+		void bloodWorkDone();
+		void xRaydone();
 	private:
 		bool bloodwork;
 		bool xRay;

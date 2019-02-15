@@ -7,6 +7,7 @@
 
 
 #import "OrderedLinkedList.hpp"
+#import "Patient.hpp"
 
 OrderedLinkedList::OrderedLinkedList(){
 	top=0;
@@ -25,10 +26,11 @@ ListItem* OrderedLinkedList::removeTop(){
 void OrderedLinkedList::addItem(ListItem* newItem){
 	Node* curr = top;
 	Node* prev = 0;
-	while(curr!=0 && (curr->getItem())->getPriority() < newItem->getPriority() ){
+	while(curr!=0 && (curr->getItem())->isGreaterThan(newItem) ){
 		prev = curr;
 		curr=curr->getNext();
 	}
+
 	//case: only item / first item
 	if(prev == 0){
 		top = new Node(newItem,top);
