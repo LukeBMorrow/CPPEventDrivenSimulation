@@ -15,12 +15,14 @@
 #include "Patient.hpp"
 using namespace std;
 
+
 class FileProcessor{
 	public:
 		FileProcessor(string fileName);
 		Patient* nextPatient();
 	private:
 		ifstream* inFile;
+		static OrderedLinkedList* patients;
 };
 
 

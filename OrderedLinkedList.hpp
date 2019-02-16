@@ -13,7 +13,7 @@ class OrderedLinkedList{
 	public:
 		OrderedLinkedList();
 		bool isEmpty();
-		ListItem* removeTop();
+		ListItem* Delete(ListItem* target);
 		void addItem(ListItem* newItem);
 	private:
 		Node* top;

@@ -20,7 +20,7 @@ void Queue::enqueue(ListItem* item){
 	}
 }
 
-ListItem* Queue::dequeue(){
+ListItem* Queue::dequeue(ListItem* target){
 	ListItem* result = 0;
 	if(end!=0){
 		if(end->getNext()==end){

@@ -3,31 +3,42 @@
 #include <string>
 #include <iostream>
 #include "ListItem.hpp"
+#include "TimingRecord.hpp"
 using namespace std;
 
-int idCounter=0;
 
+static int idCounter=0;
 class Patient: public ListItem {
 	public:
 		Patient(int arrivalT, int assesT, int patPriority,
 				string DiagReq,int treatT);
 		bool needsBloodwork();
 		bool needsXRay();
-		int getTreatmentTime();
+		int getTreatmentDuration();
 		int getArrivalTime();
-		int getAssessmentTime();
+		int getAssessmentDuration();
 		int getSevarity();
 		virtual bool isGreaterThan(ListItem* other);
 		void bloodWorkDone();
 		void xRaydone();
 		int getPatientID();
+		void setAssessSt(int newTime);
+		void setAssessEn(int newTime);
+		void setBWSt(int newTime);
+		void setBWEn(int newTime);
+		void setXRaySt(int newTime);
+		void setXRayEn(int newTime);
+		void setTreatSt(int newTime);
+		void setTreatEn(int newTime);
 	private:
 		bool bloodwork;
 		bool xRay;
-		int treatmentTime;
+		int treatmentDuration;
 		int arrivalTime;
-		int assessmentTime;
+		int assessmentDuration;
 		int sevarity;
 		int patientID;
+		TimingRecord* patientStats;
 };
+
 #endif

@@ -4,6 +4,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../A2Const.cpp \
 ../Arrival.cpp \
 ../AtartAssessment.cpp \
 ../BloodWorkTech.cpp \
@@ -27,6 +28,7 @@ O_SRCS += \
 ../Main.o 
 
 OBJS += \
+./A2Const.o \
 ./Arrival.o \
 ./AtartAssessment.o \
 ./BloodWorkTech.o \
@@ -46,6 +48,7 @@ OBJS += \
 ./XRayTech.o 
 
 CPP_DEPS += \
+./A2Const.d \
 ./Arrival.d \
 ./AtartAssessment.d \
 ./BloodWorkTech.d \

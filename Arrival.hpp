@@ -12,9 +12,11 @@
 #include "Patient.hpp"
 #include "FileProcessor.hpp"
 
-FileProcessor* fileP;
+
 
 class Arrival:Event{
+	private:
+		static FileProcessor* fileP;
 	public:
 		Arrival(Patient* newPatient, int time, FileProcessor* fileProcessor);
 		Arrival(Patient* newPatient, int time);

@@ -9,11 +9,11 @@
 
 Patient::Patient(int arrivalT, int assesT, int patPriority,
 				string diagReq,int treatT){
-
-	treatmentTime=treatT;
+	treatmentDuration=treatT;
 	arrivalTime=arrivalT;
-	assessmentTime=assesT;
+	assessmentDuration=assesT;
 	sevarity=patPriority;
+	patientStats = new TimingRecord(arrivalT,assesT,treatT);
 	patientID=idCounter;
 	idCounter++;
 	bloodwork=false;
@@ -49,14 +49,14 @@ bool Patient::needsBloodwork(){
 bool Patient::needsXRay(){
 	return xRay;
 }
-int Patient::getTreatmentTime(){
-	return treatmentTime;
+int Patient::getTreatmentDuration(){
+	return treatmentDuration;
 }
 int Patient::getArrivalTime(){
 	return arrivalTime;
 }
-int Patient::getAssessmentTime(){
-	return assessmentTime;
+int Patient::getAssessmentDuration(){
+	return assessmentDuration;
 }
 int Patient::getSevarity(){
 	return sevarity;
@@ -66,4 +66,28 @@ void Patient::bloodWorkDone(){
 }
 void Patient::xRaydone(){
 	xRay=false;
+}
+void Patient::setAssessSt(int newTime){
+
+}
+void Patient::setAssessEn(int newTime){
+
+}
+void Patient::setBWSt(int newTime){
+
+}
+void Patient::setBWEn(int newTime){
+
+}
+void Patient::setXRaySt(int newTime){
+
+}
+void Patient::setXRayEn(int newTime){
+
+}
+void Patient::setTreatSt(int newTime){
+
+}
+void Patient::setTreatEn(int newTime){
+
 }

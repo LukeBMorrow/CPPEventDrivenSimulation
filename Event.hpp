@@ -10,7 +10,7 @@
 #include "ListItem.hpp"
 #include "Staff.hpp"
 
-class Event:ListItem{
+class Event:ListItem{//pure virtual
 	public:
 		Event(Patient* newPatient,int time,Staff* station);
 		Patient* getPatient();
